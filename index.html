@@ -1,0 +1,153 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..9a57ab0231a8f6c705bd4c3ea0299c102be4113c
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,143 @@
++<!DOCTYPE html>
++<html lang="zh-Hant">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <meta name="description" content="南投精品阿拉比卡咖啡電商網站，呈現山林雲霧、職人烘焙與單品咖啡選購體驗。" />
++  <title>南投精品阿拉比卡咖啡｜山霧裡的職人烘焙</title>
++  <link rel="preconnect" href="https://images.unsplash.com" />
++  <link rel="stylesheet" href="styles.css" />
++</head>
++<body>
++  <header class="site-header" aria-label="主導覽">
++    <a class="brand" href="#top" aria-label="南投精品阿拉比卡咖啡首頁">
++      <span class="brand-mark">森</span>
++      <span class="brand-copy">
++        <strong>南投阿拉比卡</strong>
++        <small>Nantou Arabica</small>
++      </span>
++    </a>
++    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
++      <span></span><span></span><span></span>
++      <span class="sr-only">開啟選單</span>
++    </button>
++    <nav id="primary-nav" class="primary-nav" aria-label="網站導覽">
++      <a href="#origin">產地風土</a>
++      <a href="#collection">精品選購</a>
++      <a href="#craft">職人製程</a>
++      <a href="#journal">山林札記</a>
++      <a class="nav-cta" href="#collection">立即訂購</a>
++    </nav>
++  </header>
++
++  <main id="top">
++    <section class="hero" aria-labelledby="hero-title">
++      <div class="mist-layer"></div>
++      <div class="hero-content reveal">
++        <p class="eyebrow">Single Origin · Nantou Mountains</p>
++        <h1 id="hero-title">在南投雲霧裡，等一杯有溫度的阿拉比卡。</h1>
++        <p class="hero-lead">以大地色系與極簡留白，收藏海拔、森林、晨霧與烘豆師的專注。每一支豆款都來自可追溯小農批次，為日常沖煮保留山林的層次。</p>
++        <div class="hero-actions">
++          <a class="button primary" href="#collection">探索咖啡豆</a>
++          <a class="button ghost" href="#origin">認識產地</a>
++        </div>
++      </div>
++      <aside class="hero-card reveal" aria-label="本季推薦">
++        <span>本季限定</span>
++        <h2>霧社日曬微批次</h2>
++        <p>黑糖、杉木、熟果尾韻</p>
++        <strong>NT$ 680 / 200g</strong>
++      </aside>
++    </section>
++
++    <section id="origin" class="origin section-grid">
++      <div class="section-copy reveal">
++        <p class="eyebrow">Terroir</p>
++        <h2>山林、雲霧與晝夜溫差，構成南投的深邃風味。</h2>
++        <p>咖啡樹沿著山坡層層生長，清晨霧氣減緩日照，午後山風帶走濕度，讓果實緩慢成熟。網站以大面積照片、溫潤米白底色與深咖啡文字，重現走入產區時的安靜節奏。</p>
++      </div>
++      <div class="origin-gallery reveal" aria-label="南投產地照片牆">
++        <figure class="gallery-large">
++          <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1400&q=85" alt="山坡咖啡枝葉與成熟咖啡果" />
++          <figcaption>海拔與林蔭讓酸質更細緻</figcaption>
++        </figure>
++        <figure>
++          <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=900&q=85" alt="職人手持咖啡豆檢視品質" />
++          <figcaption>手選熟果，保留乾淨甜感</figcaption>
++        </figure>
++      </div>
++    </section>
++
++    <section id="collection" class="collection" aria-labelledby="collection-title">
++      <div class="section-heading reveal">
++        <p class="eyebrow">Shop Collection</p>
++        <h2 id="collection-title">精選豆單</h2>
++        <p>從清亮水洗到濃郁日曬，挑選適合手沖、義式與日常濾掛的南投風味。</p>
++      </div>
++      <div class="product-grid">
++        <article class="product-card reveal">
++          <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=900&q=85" alt="精品咖啡豆包裝與咖啡杯" />
++          <div class="product-content">
++            <p class="roast">淺中焙 · 水洗</p>
++            <h3>杉林溪晨霧</h3>
++            <p>柑橘、白花、蜂蜜尾韻，口感清透細長。</p>
++            <div class="product-meta"><strong>NT$ 620</strong><button type="button">加入購物車</button></div>
++          </div>
++        </article>
++        <article class="product-card reveal">
++          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85" alt="手沖咖啡壺沖煮精品咖啡" />
++          <div class="product-content">
++            <p class="roast">中焙 · 蜜處理</p>
++            <h3>魚池森林蜜香</h3>
++            <p>龍眼蜜、烤堅果、可可，適合每日溫柔醒神。</p>
++            <div class="product-meta"><strong>NT$ 580</strong><button type="button">加入購物車</button></div>
++          </div>
++        </article>
++        <article class="product-card reveal">
++          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="咖啡杯與深色木質桌面" />
++          <div class="product-content">
++            <p class="roast">中深焙 · 日曬</p>
++            <h3>霧社暖陽</h3>
++            <p>黑糖、熟莓、杉木香氣，尾段厚實且有溫度。</p>
++            <div class="product-meta"><strong>NT$ 680</strong><button type="button">加入購物車</button></div>
++          </div>
++        </article>
++      </div>
++    </section>
++
++    <section id="craft" class="craft">
++      <div class="craft-panel reveal">
++        <p class="eyebrow">Crafted Slowly</p>
++        <h2>把職人手感放進每個細節。</h2>
++        <div class="craft-steps">
++          <div><span>01</span><h3>手採熟果</h3><p>以小批次採收確保成熟度，避免混入未熟果。</p></div>
++          <div><span>02</span><h3>低溫發酵</h3><p>控制時間與溫度，讓甜感與香氣自然展開。</p></div>
++          <div><span>03</span><h3>曲線烘焙</h3><p>依豆況調整火力，保留南投山林的乾淨層次。</p></div>
++        </div>
++      </div>
++    </section>
++
++    <section id="journal" class="journal section-grid">
++      <div class="journal-image reveal" role="img" aria-label="雲霧覆蓋的山林景色"></div>
++      <div class="section-copy reveal">
++        <p class="eyebrow">Journal</p>
++        <h2>訂閱山林札記，收到最新烘焙批次與沖煮靈感。</h2>
++        <form class="newsletter">
++          <label for="email">電子信箱</label>
++          <div>
++            <input id="email" type="email" placeholder="your@email.com" required />
++            <button type="submit">訂閱</button>
++          </div>
++        </form>
++      </div>
++    </section>
++  </main>
++
++  <footer class="site-footer">
++    <p>© 2026 南投精品阿拉比卡咖啡</p>
++    <p>山林風土 · 小農批次 · 職人烘焙</p>
++  </footer>
++
++  <script src="script.js"></script>
++</body>
++</html>
+ 
+EOF
+)
