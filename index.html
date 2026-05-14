@@ -33,6 +33,8 @@
       line-height: 1.85;
     }
     img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .feature-image img, .story-block img, .product-card img, .related-card img { filter: saturate(0.88) contrast(1.08) brightness(0.88); transition: transform 0.55s ease, filter 0.55s ease; }
+    .article-card figure:hover img, .product-card:hover img, .related-card:hover img { transform: scale(1.035); filter: saturate(0.98) contrast(1.12) brightness(0.96); }
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; }
     .sr-only {
@@ -114,7 +116,7 @@
       overflow: hidden;
       background:
         linear-gradient(115deg, rgba(63, 40, 24, 0.9), rgba(63, 40, 24, 0.46) 54%, rgba(37, 79, 42, 0.3)),
-        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90') center/cover;
+        url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=2200&q=90') center/cover;
     }
     .hero::after {
       content: '';
@@ -245,7 +247,7 @@
       color: var(--cream);
       background:
         linear-gradient(rgba(63, 40, 24, 0.74), rgba(63, 40, 24, 0.74)),
-        url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2200&q=90') center/cover;
+        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=90') center/cover;
       border-radius: 1.8rem;
     }
     .newsletter-band h2 { margin: 0; font-size: clamp(2rem, 4vw, 4rem); }
@@ -370,7 +372,7 @@
     <div class="page-wrap">
       <article id="story" class="article-card" aria-labelledby="article-title">
         <figure class="feature-image reveal">
-          <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1400&q=85" alt="山坡咖啡枝葉與成熟咖啡果" />
+          <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?auto=format&fit=crop&w=1400&q=88" alt="霧氣包覆的山林與晨光" />
         </figure>
         <div class="article-intro reveal">
           <p class="eyebrow">Nantou Coffee Farmer</p>
@@ -385,7 +387,7 @@
             <p>我們以人工巡園、修枝與手選熟果維持咖啡品質，減少不必要的化學介入。這樣的節奏較慢，卻能讓每一杯咖啡保留產地土壤、氣候與林蔭的個性。</p>
           </div>
           <figure>
-            <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=900&q=85" alt="職人手持咖啡豆檢視品質" />
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=88" alt="暗色背景中的咖啡豆細節" />
           </figure>
         </section>
 
@@ -396,7 +398,7 @@
             <p>不同批次的水分、密度與熟成狀態都會影響烘焙曲線。烘豆師以小批次紀錄每次變化，讓杉木香、熟果甜與蜂蜜尾韻更穩定地呈現在杯中。</p>
           </div>
           <figure>
-            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85" alt="手沖咖啡壺沖煮精品咖啡" />
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=88" alt="暖光咖啡館裡的手沖咖啡" />
           </figure>
         </section>
 
@@ -411,7 +413,7 @@
             <p>當每一包咖啡豆都能清楚說出來源、製程與風味，消費者能以更好的選擇支持小農，小農也能以合理收益投入下一季的照護與實驗。</p>
           </div>
           <figure>
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="咖啡杯與深色木質桌面" />
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=88" alt="深色桌面上的咖啡杯與光影" />
           </figure>
         </section>
       </article>
@@ -468,7 +470,7 @@
       </div>
       <div class="product-grid">
         <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=900&q=85" alt="精品咖啡豆包裝與咖啡杯" />
+          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=900&q=88" alt="深焙咖啡豆與職人選豆氛圍" />
           <div class="product-body">
             <p class="roast">淺中焙 · 水洗</p>
             <h3>杉林溪晨霧</h3>
@@ -477,7 +479,7 @@
           </div>
         </article>
         <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85" alt="手沖咖啡壺沖煮精品咖啡" />
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=88" alt="暖光咖啡館裡的手沖咖啡" />
           <div class="product-body">
             <p class="roast">中焙 · 蜜處理</p>
             <h3>魚池森林蜜香</h3>
@@ -486,7 +488,7 @@
           </div>
         </article>
         <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="咖啡杯與深色木質桌面" />
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=88" alt="深色桌面上的咖啡杯與光影" />
           <div class="product-body">
             <p class="roast">中深焙 · 日曬</p>
             <h3>霧社暖陽</h3>
@@ -514,21 +516,21 @@
       </div>
       <div class="related-grid">
         <article class="related-card reveal">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=90" alt="雲霧覆蓋的山林景色" />
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=90" alt="夜色山脈與星光雲霧" />
           <div class="related-body">
             <h3>南投山林如何影響咖啡風味</h3>
             <p>從雲霧、日照到晝夜溫差，認識產地條件。</p>
           </div>
         </article>
         <article class="related-card reveal">
-          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2200&q=90" alt="咖啡沖煮與烘焙工作場景" />
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=90" alt="暖光咖啡吧檯與沖煮場景" />
           <div class="related-body">
             <h3>水洗、蜜處理與日曬的差異</h3>
             <p>用處理法找到自己喜歡的酸甜與厚度。</p>
           </div>
         </article>
         <article class="related-card reveal">
-          <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1400&q=85" alt="咖啡樹上的咖啡果" />
+          <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?auto=format&fit=crop&w=1400&q=88" alt="霧中山林與咖啡產地意象" />
           <div class="related-body">
             <h3>小農批次為什麼值得等待</h3>
             <p>小批量採收、處理與烘焙帶來更清楚的風土表情。</p>
