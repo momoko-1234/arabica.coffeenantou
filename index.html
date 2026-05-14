@@ -3,38 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="南投精品阿拉比卡咖啡，參考小農故事型網站架構打造的品牌電商頁，保留山林、咖啡與職人圖片素材。" />
-  <title>南投精品阿拉比卡咖啡｜小農故事與精品豆選購</title>
+  <meta name="description" content="麒麟啡香 Kirin Coffee 精品咖啡電商官網，黑金沉浸式視覺，呈現仁愛鄉得獎批次、Bunun 原民職人精神與高山咖啡風味。" />
+  <title>麒麟啡香 Kirin Coffee｜仁愛鄉金質獎精品咖啡</title>
   <link rel="preconnect" href="https://images.unsplash.com" />
   <style>
     :root {
-      --espresso: #3f2818;
-      --roast: #6f4e37;
-      --forest: #254f2a;
-      --leaf: #6f8f55;
-      --cream: #f7f0df;
-      --parchment: #fffaf0;
-      --clay: #b98255;
-      --ink: #2a2018;
-      --muted: #7a6a58;
-      --line: rgba(63, 40, 24, 0.16);
-      --shadow: 0 22px 58px rgba(63, 40, 24, 0.14);
-      --serif: Georgia, 'Times New Roman', 'Noto Serif TC', serif;
-      --sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --graphite: #1a1a1a;
+      --obsidian: #080808;
+      --charcoal: #242424;
+      --gold: #d4af37;
+      --gold-light: #f8e7a2;
+      --bronze: #8b5f22;
+      --cream: #fff6dc;
+      --muted: #b7a77f;
+      --line: rgba(212, 175, 55, 0.26);
+      --glass: rgba(26, 26, 26, 0.72);
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.58);
+      --sans: Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --display: 'Trebuchet MS', 'Noto Serif TC', 'Times New Roman', serif;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      color: var(--ink);
-      background: var(--cream);
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(212, 175, 55, 0.13), transparent 28rem),
+        radial-gradient(circle at 80% 12%, rgba(139, 95, 34, 0.18), transparent 30rem),
+        var(--graphite);
       font-family: var(--sans);
-      line-height: 1.85;
+      line-height: 1.75;
     }
     img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .feature-image img, .story-block img, .product-card img, .related-card img { filter: saturate(0.88) contrast(1.08) brightness(0.88); transition: transform 0.55s ease, filter 0.55s ease; }
-    .article-card figure:hover img, .product-card:hover img, .related-card:hover img { transform: scale(1.035); filter: saturate(0.98) contrast(1.12) brightness(0.96); }
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; }
     .sr-only {
@@ -49,227 +50,341 @@
       border: 0;
     }
 
-    .utility-bar {
+    .award-strip {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      padding: 0.45rem 1rem;
-      color: var(--cream);
-      background: var(--espresso);
-      font-size: 0.85rem;
+      gap: 0.85rem;
+      padding: 0.72rem 1rem;
+      color: var(--obsidian);
+      background: linear-gradient(90deg, var(--bronze), var(--gold-light), var(--gold), var(--bronze));
+      font-size: 0.92rem;
+      font-weight: 800;
       letter-spacing: 0.08em;
+      text-align: center;
     }
+    .award-strip span { color: #120c04; }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 40;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 1.5rem;
       padding: 1rem clamp(1rem, 4vw, 4rem);
-      background: rgba(247, 240, 223, 0.94);
+      background: rgba(8, 8, 8, 0.82);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(18px);
     }
     .brand {
       justify-self: center;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: var(--espresso);
-      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--gold-light);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
     .brand-mark {
       display: grid;
       place-items: center;
-      width: 3.2rem;
-      height: 3.2rem;
-      margin-bottom: 0.35rem;
-      border: 1px solid var(--espresso);
+      width: 3.35rem;
+      height: 3.35rem;
+      color: var(--obsidian);
+      background: radial-gradient(circle at 32% 18%, #fff8cf, var(--gold) 38%, var(--bronze) 74%, #211302);
+      border: 1px solid rgba(248, 231, 162, 0.78);
       border-radius: 50%;
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      background: var(--parchment);
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.34);
+      font-family: var(--display);
+      font-size: 1.38rem;
+      font-weight: 900;
     }
-    .brand strong { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.14em; }
-    .brand small { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
-    .primary-nav, .shop-actions { display: flex; align-items: center; gap: clamp(0.75rem, 2vw, 1.6rem); }
-    .primary-nav a, .shop-actions a { font-size: 0.95rem; color: var(--espresso); }
-    .shop-actions { justify-self: end; }
-    .cart-pill {
-      padding: 0.55rem 0.95rem;
-      color: var(--cream) !important;
-      background: var(--forest);
+    .brand-copy { display: grid; line-height: 1.15; }
+    .brand-copy strong { font-family: var(--display); font-size: 1.05rem; }
+    .brand-copy small { color: var(--muted); font-size: 0.68rem; letter-spacing: 0.24em; }
+    .primary-nav, .header-actions { display: flex; align-items: center; gap: clamp(0.85rem, 2vw, 1.55rem); }
+    .primary-nav a, .header-actions a { color: rgba(255, 246, 220, 0.86); font-size: 0.95rem; }
+    .header-actions { justify-self: end; }
+    .cart-cta {
+      padding: 0.6rem 1rem;
+      color: var(--obsidian) !important;
+      background: var(--gold);
       border-radius: 999px;
+      font-weight: 800;
     }
     .nav-toggle { display: none; }
 
     .hero {
       position: relative;
-      min-height: 72svh;
+      min-height: 88svh;
       display: grid;
-      place-items: end start;
-      padding: clamp(6rem, 12vw, 10rem) clamp(1.25rem, 6vw, 6rem) clamp(3rem, 7vw, 6rem);
-      color: var(--cream);
+      grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 6vw, 6rem);
       overflow: hidden;
       background:
-        linear-gradient(115deg, rgba(63, 40, 24, 0.9), rgba(63, 40, 24, 0.46) 54%, rgba(37, 79, 42, 0.3)),
-        url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=2200&q=90') center/cover;
+        linear-gradient(110deg, rgba(8, 8, 8, 0.92), rgba(26, 26, 26, 0.72) 50%, rgba(8, 8, 8, 0.54)),
+        url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=2400&q=92') center/cover;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
     }
     .hero::after {
       content: '';
       position: absolute;
       inset: auto -10% 0;
       height: 34%;
-      background: radial-gradient(ellipse at center, rgba(247, 240, 223, 0.32), transparent 68%);
-      filter: blur(20px);
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.24), transparent 68%);
+      filter: blur(28px);
       animation: mist 14s ease-in-out infinite alternate;
     }
     @keyframes mist { from { transform: translateX(-2rem); } to { transform: translateX(2rem); } }
-    .hero-content { position: relative; z-index: 1; max-width: 54rem; }
-    .breadcrumb, .eyebrow {
-      margin: 0 0 1rem;
-      color: var(--clay);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .hero-content, .hero-logo { position: relative; z-index: 1; }
+    .medal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 0.9rem;
+      margin-bottom: 1.1rem;
+      color: var(--gold-light);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(8, 8, 8, 0.54);
+      box-shadow: inset 0 0 18px rgba(212, 175, 55, 0.13);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
     }
-    h1, h2, h3 { font-family: var(--serif); line-height: 1.18; color: inherit; }
-    h1 { margin: 0; font-size: clamp(2.8rem, 7vw, 6.9rem); letter-spacing: -0.055em; }
-    .hero-lead { max-width: 42rem; margin: 1.4rem 0 0; color: rgba(247, 240, 223, 0.86); font-size: clamp(1.08rem, 1.8vw, 1.28rem); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; }
+    .medal-badge::before { content: '✦'; color: var(--gold); }
+    h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
+    h1 {
+      max-width: 58rem;
+      margin: 0;
+      font-size: clamp(3.25rem, 8vw, 8.4rem);
+      letter-spacing: -0.06em;
+      text-shadow: 0 0 36px rgba(212, 175, 55, 0.18);
+    }
+    .gold-text {
+      color: transparent;
+      background: linear-gradient(100deg, #fff8cf, var(--gold), #94651e 72%, #fff0a6);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .hero-lead { max-width: 42rem; color: rgba(255, 246, 220, 0.78); font-size: clamp(1.05rem, 1.7vw, 1.28rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 3rem;
-      padding: 0.75rem 1.25rem;
+      min-height: 3.15rem;
+      padding: 0.78rem 1.25rem;
       border: 1px solid transparent;
       border-radius: 999px;
-      transition: transform 0.25s ease, background 0.25s ease;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .button:hover { transform: translateY(-2px); }
-    .button.primary { color: var(--cream); background: var(--forest); }
-    .button.ghost { color: var(--cream); border-color: rgba(247, 240, 223, 0.65); }
+    .button.primary { color: var(--obsidian); background: linear-gradient(110deg, var(--gold-light), var(--gold), var(--bronze)); font-weight: 900; box-shadow: 0 12px 32px rgba(212, 175, 55, 0.26); }
+    .button.ghost { color: var(--gold-light); border-color: var(--line); background: rgba(8, 8, 8, 0.38); }
 
-    .page-wrap {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(17rem, 21rem);
-      gap: clamp(2rem, 5vw, 4rem);
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 2rem);
-    }
-    .article-card, .sidebar-card, .product-card, .related-card {
-      background: var(--parchment);
-      border: 1px solid var(--line);
-      border-radius: 1.6rem;
-      box-shadow: var(--shadow);
-    }
-    .article-card { overflow: hidden; }
-    .article-intro { padding: clamp(1.4rem, 4vw, 3rem); }
-    .article-intro h2, .story-block h2, .section-heading h2 { margin: 0; color: var(--espresso); font-size: clamp(2rem, 4vw, 3.8rem); letter-spacing: -0.04em; }
-    .article-intro p, .story-block p, .section-heading p, .sidebar-card p { color: var(--muted); }
-    .feature-image { height: clamp(18rem, 42vw, 32rem); }
-    .story-block { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; padding: clamp(1.4rem, 4vw, 3rem); border-top: 1px solid var(--line); }
-    .story-block.reverse { grid-template-columns: 1.1fr 0.9fr; }
-    .story-block.reverse .story-copy { order: 2; }
-    .story-block figure { margin: 0; overflow: hidden; min-height: 20rem; border-radius: 1.2rem; }
-    .quote-panel {
-      margin: clamp(1.4rem, 4vw, 3rem);
-      padding: clamp(1.5rem, 4vw, 3rem);
-      color: var(--cream);
-      background: linear-gradient(135deg, var(--espresso), var(--forest));
-      border-radius: 1.4rem;
-    }
-    .quote-panel blockquote { margin: 0; font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.7rem); line-height: 1.35; }
-
-    .sidebar { display: grid; align-content: start; gap: 1.2rem; }
-    .sidebar-card { padding: 1.25rem; }
-    .sidebar-card h2, .sidebar-card h3 { margin: 0 0 0.85rem; color: var(--espresso); }
-    .brand-badge {
+    .hero-logo {
       display: grid;
       place-items: center;
-      width: 4.5rem;
-      height: 4.5rem;
-      margin-bottom: 1rem;
-      color: var(--cream);
-      background: var(--forest);
-      border-radius: 50%;
-      font-family: var(--serif);
-      font-size: 1.4rem;
-    }
-    .search-box { display: flex; gap: 0.5rem; }
-    .search-box input, .newsletter input {
-      min-width: 0;
-      width: 100%;
-      padding: 0.75rem 0.9rem;
+      min-height: 34rem;
+      padding: clamp(1.5rem, 4vw, 3rem);
       border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
+      border-radius: 2rem;
+      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.13), rgba(8, 8, 8, 0.7) 58%, rgba(8, 8, 8, 0.9));
+      box-shadow: var(--shadow), inset 0 0 44px rgba(212, 175, 55, 0.08);
     }
-    .search-box button, .newsletter button, .product-card button {
-      border: 0;
-      border-radius: 999px;
-      padding: 0.75rem 1rem;
-      color: var(--cream);
-      background: var(--forest);
-      cursor: pointer;
-    }
-    .link-list, .tag-list { display: grid; gap: 0.55rem; padding: 0; margin: 0; list-style: none; }
-    .link-list a { color: var(--roast); border-bottom: 1px solid transparent; }
-    .link-list a:hover { border-color: var(--roast); }
-    .tag-list { display: flex; flex-wrap: wrap; }
-    .tag-list a { padding: 0.35rem 0.7rem; color: var(--forest); background: rgba(37, 79, 42, 0.09); border-radius: 999px; font-size: 0.86rem; }
+    .kirin-emblem { width: min(100%, 25rem); filter: drop-shadow(0 0 28px rgba(212, 175, 55, 0.28)); }
+    .emblem-title { margin-top: 1rem; text-align: center; }
+    .emblem-title strong { display: block; color: var(--gold-light); font-family: var(--display); font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: 0.2em; }
+    .emblem-title span { color: var(--muted); letter-spacing: 0.25em; }
 
-    .shop-section, .related-section {
+    .section {
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.1rem, 5vw, 5rem);
+    }
+    .section-heading { max-width: 50rem; margin: 0 auto 2.5rem; text-align: center; }
+    .eyebrow { margin: 0 0 0.8rem; color: var(--gold); font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.78rem; }
+    .section-heading h2, .story-copy h2 { margin: 0; color: var(--gold-light); font-size: clamp(2.2rem, 5vw, 5.2rem); letter-spacing: -0.045em; }
+    .section-heading p, .story-copy p, .product-card p { color: rgba(255, 246, 220, 0.72); }
+
+    .honor-board {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .honor-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 20rem;
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-radius: 1.6rem;
+      background:
+        linear-gradient(145deg, rgba(212, 175, 55, 0.16), rgba(26, 26, 26, 0.74)),
+        var(--charcoal);
+      box-shadow: var(--shadow);
+    }
+    .honor-card::before {
+      content: '';
+      position: absolute;
+      inset: -40% auto auto -20%;
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.16);
+      filter: blur(20px);
+      animation: pulseGold 4s ease-in-out infinite alternate;
+    }
+    @keyframes pulseGold { from { opacity: 0.35; transform: scale(0.9); } to { opacity: 0.9; transform: scale(1.08); } }
+    .honor-card.featured { grid-column: span 1; background: linear-gradient(145deg, rgba(212, 175, 55, 0.26), rgba(8, 8, 8, 0.9)); }
+    .honor-year { position: relative; color: var(--muted); letter-spacing: 0.16em; }
+    .honor-card h3 { position: relative; margin: 2rem 0 0.75rem; color: var(--gold-light); font-size: 2rem; }
+    .honor-card strong { position: relative; display: block; color: var(--gold); font-size: 2.6rem; line-height: 1; }
+    .honor-card p { position: relative; color: rgba(255, 246, 220, 0.72); }
+    .trophy-ring {
+      position: absolute;
+      right: -2rem;
+      bottom: -2rem;
+      display: grid;
+      place-items: center;
+      width: 11rem;
+      height: 11rem;
+      color: rgba(212, 175, 55, 0.16);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 50%;
+      font-size: 5rem;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 7rem);
     }
-    .section-heading { margin-bottom: 1.7rem; }
-    .product-grid, .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-    .product-card, .related-card { overflow: hidden; }
-    .product-card img, .related-card img { height: 16rem; }
-    .product-body, .related-body { padding: 1.25rem; }
-    .product-body .roast { margin: 0 0 0.4rem; color: var(--leaf); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.78rem; }
-    .product-body h3, .related-body h3 { margin: 0; color: var(--espresso); font-size: 1.55rem; }
-    .product-body p, .related-body p { color: var(--muted); }
-    .product-meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .product-meta strong { color: var(--espresso); font-family: var(--serif); font-size: 1.35rem; }
-
-    .newsletter-band {
-      margin-top: clamp(3rem, 6vw, 5rem);
-      padding: clamp(2rem, 5vw, 4rem);
-      color: var(--cream);
+    .story-portrait {
+      min-height: 36rem;
+      border: 1px solid var(--line);
+      border-radius: 2rem;
       background:
-        linear-gradient(rgba(63, 40, 24, 0.74), rgba(63, 40, 24, 0.74)),
-        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=90') center/cover;
-      border-radius: 1.8rem;
+        linear-gradient(rgba(8, 8, 8, 0.2), rgba(8, 8, 8, 0.66)),
+        url('https://images.unsplash.com/photo-1521302080334-4bebac2763a6?auto=format&fit=crop&w=1400&q=90') center/cover;
+      box-shadow: var(--shadow);
     }
-    .newsletter-band h2 { margin: 0; font-size: clamp(2rem, 4vw, 4rem); }
-    .newsletter { display: flex; gap: 0.75rem; max-width: 34rem; margin-top: 1.4rem; }
+    .story-copy {
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--line);
+      border-radius: 2rem;
+      background: rgba(8, 8, 8, 0.46);
+      box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.06);
+    }
+    .profile-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .profile-stats div { padding: 1rem; border: 1px solid var(--line); border-radius: 1rem; background: rgba(212, 175, 55, 0.06); }
+    .profile-stats strong { display: block; color: var(--gold-light); font-family: var(--display); font-size: 1.45rem; }
+    .profile-stats span { color: var(--muted); font-size: 0.85rem; }
+
+    .shop { background: linear-gradient(180deg, rgba(8, 8, 8, 0), rgba(8, 8, 8, 0.74)); }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 1180px; margin: 0 auto; }
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1.6rem;
+      background: rgba(8, 8, 8, 0.62);
+      box-shadow: var(--shadow);
+    }
+    .product-card.limited::before {
+      content: '金獎批次限量區';
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 2;
+      padding: 0.4rem 0.75rem;
+      color: var(--obsidian);
+      background: var(--gold);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+    .product-card img { height: 17rem; filter: saturate(0.72) contrast(1.15) brightness(0.75); transition: transform 0.5s ease, filter 0.5s ease; }
+    .product-card:hover img { transform: scale(1.05); filter: saturate(0.95) contrast(1.12) brightness(0.9); }
+    .product-body { padding: 1.25rem; }
+    .roast { margin: 0 0 0.45rem; color: var(--gold); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; }
+    .product-body h3 { margin: 0; color: var(--gold-light); font-size: 1.7rem; }
+    .product-meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+    .product-meta strong { color: var(--gold-light); font-family: var(--display); font-size: 1.35rem; }
+    .product-meta button { border: 0; color: var(--obsidian); background: var(--gold); border-radius: 999px; padding: 0.7rem 1rem; cursor: pointer; font-weight: 900; }
+    .radar {
+      width: 9.5rem;
+      margin: 1rem auto 0;
+      display: block;
+    }
+    .radar text { fill: var(--muted); font-size: 9px; font-family: var(--sans); }
+    .radar polygon.grid { fill: none; stroke: rgba(212, 175, 55, 0.25); stroke-width: 1; }
+    .radar polygon.flavor { fill: rgba(212, 175, 55, 0.24); stroke: var(--gold); stroke-width: 2; }
+
+    .experience {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .experience-card {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 1.3rem;
+      background: rgba(8, 8, 8, 0.52);
+    }
+    .experience-card span { color: var(--gold); font-family: var(--display); font-size: 2rem; }
+    .experience-card h3 { margin: 0.6rem 0; color: var(--gold-light); }
+    .experience-card p { color: rgba(255, 246, 220, 0.68); }
+
+    .line-connect {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.05rem;
+      color: var(--obsidian);
+      background: linear-gradient(110deg, #d9ffb5, #06c755 65%);
+      border-radius: 999px;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.36);
+      font-weight: 900;
+    }
+    .line-connect::before { content: 'LINE'; font-size: 0.8rem; padding: 0.25rem 0.45rem; color: #fff; background: #04a943; border-radius: 999px; }
 
     .site-footer {
-      color: var(--cream);
-      background: var(--espresso);
-    }
-    .footer-inner {
       display: grid;
       grid-template-columns: 1.4fr repeat(3, 1fr);
       gap: 2rem;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 5rem);
+      border-top: 1px solid var(--line);
+      background: var(--obsidian);
     }
-    .footer-inner h2, .footer-inner h3 { margin: 0 0 0.9rem; color: var(--cream); }
-    .footer-inner p, .footer-inner a { color: rgba(247, 240, 223, 0.76); }
-    .footer-bottom { padding: 1rem; text-align: center; border-top: 1px solid rgba(247, 240, 223, 0.14); color: rgba(247, 240, 223, 0.68); }
+    .site-footer h2, .site-footer h3 { margin: 0 0 0.8rem; color: var(--gold-light); }
+    .site-footer p, .site-footer a { color: rgba(255, 246, 220, 0.66); }
 
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 980px) {
@@ -277,15 +392,15 @@
       .brand { justify-self: start; grid-column: 2; }
       .nav-toggle {
         display: inline-grid;
-        gap: 0.28rem;
-        width: 2.75rem;
-        height: 2.75rem;
+        gap: 0.3rem;
+        width: 2.8rem;
+        height: 2.8rem;
         place-content: center;
         border: 1px solid var(--line);
         border-radius: 999px;
-        background: var(--parchment);
+        background: rgba(8, 8, 8, 0.5);
       }
-      .nav-toggle span:not(.sr-only) { width: 1.25rem; height: 2px; background: var(--espresso); }
+      .nav-toggle span:not(.sr-only) { width: 1.35rem; height: 2px; background: var(--gold); }
       .primary-nav {
         position: absolute;
         top: calc(100% + 0.5rem);
@@ -293,46 +408,38 @@
         right: 1rem;
         display: grid;
         padding: 1rem;
-        background: var(--parchment);
         border: 1px solid var(--line);
         border-radius: 1rem;
-        box-shadow: var(--shadow);
+        background: rgba(8, 8, 8, 0.95);
         opacity: 0;
         transform: translateY(-0.5rem);
         pointer-events: none;
         transition: 0.25s ease;
       }
       .primary-nav.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
-      .shop-actions a:not(.cart-pill) { display: none; }
-      .page-wrap { grid-template-columns: 1fr; }
-      .sidebar { grid-template-columns: repeat(2, 1fr); }
-      .story-block, .story-block.reverse { grid-template-columns: 1fr; }
-      .story-block.reverse .story-copy { order: 0; }
-      .product-grid, .related-grid { grid-template-columns: 1fr 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .header-actions a:not(.cart-cta) { display: none; }
+      .hero, .story-grid { grid-template-columns: 1fr; }
+      .hero-logo { min-height: 25rem; }
+      .honor-board, .product-grid { grid-template-columns: 1fr 1fr; }
+      .experience, .site-footer { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 640px) {
-      .utility-bar { display: none; }
+      .award-strip { display: block; font-size: 0.78rem; }
       .site-header { padding: 0.8rem 1rem; }
-      .brand strong { font-size: 0.92rem; }
-      .brand small { display: none; }
-      .brand-mark { width: 2.6rem; height: 2.6rem; margin: 0; }
-      .cart-pill { padding: 0.5rem 0.75rem; font-size: 0.86rem; }
-      h1 { font-size: clamp(2.55rem, 13vw, 4rem); }
-      .hero-actions, .newsletter, .product-meta { flex-direction: column; align-items: stretch; }
-      .sidebar, .product-grid, .related-grid, .footer-inner { grid-template-columns: 1fr; }
-      .story-block figure { min-height: 16rem; }
-      .product-card img, .related-card img { height: 14rem; }
+      .brand-copy small { display: none; }
+      .brand-mark { width: 2.65rem; height: 2.65rem; }
+      .cart-cta { padding: 0.52rem 0.72rem; font-size: 0.82rem; }
+      h1 { font-size: clamp(2.8rem, 16vw, 4.3rem); }
+      .hero-actions, .product-meta { flex-direction: column; align-items: stretch; }
+      .honor-board, .product-grid, .experience, .profile-stats, .site-footer { grid-template-columns: 1fr; }
+      .story-portrait { min-height: 22rem; }
+      .line-connect { left: 1rem; right: 1rem; justify-content: center; }
     }
   </style>
 </head>
 <body>
-  <div class="utility-bar">
-    <span>南投山林小農批次</span>
-    <span>滿 NT$1,200 免運</span>
-    <span>每週三新鮮烘焙出貨</span>
-  </div>
+  <div class="award-strip"><span>2026 仁愛鄉咖啡生豆評鑑：水洗組金質獎 / 其他處理組銀質獎</span></div>
 
   <header class="site-header" aria-label="主導覽">
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
@@ -340,231 +447,182 @@
       <span class="sr-only">開啟選單</span>
     </button>
     <nav id="primary-nav" class="primary-nav" aria-label="網站導覽">
-      <a href="#story">小農故事</a>
-      <a href="#farming">友善農法</a>
-      <a href="#shop">所有商品</a>
-      <a href="#journal">所有文章</a>
+      <a href="#heritage">榮譽榜</a>
+      <a href="#spirit">Bunun Spirit</a>
+      <a href="#products">金獎批次</a>
+      <a href="#experience">品測體驗</a>
     </nav>
-    <a class="brand" href="#top" aria-label="南投精品阿拉比卡咖啡首頁">
-      <span class="brand-mark">森</span>
-      <strong>南投阿拉比卡</strong>
-      <small>Nantou Arabica</small>
+    <a class="brand" href="#top" aria-label="麒麟啡香首頁">
+      <span class="brand-mark">麒</span>
+      <span class="brand-copy"><strong>麒麟啡香</strong><small>Kirin Coffee</small></span>
     </a>
-    <div class="shop-actions">
-      <a href="#account">會員帳號</a>
-      <a class="cart-pill" href="#shop">NT$ 0｜購物籃</a>
+    <div class="header-actions">
+      <a href="#line">職人諮詢</a>
+      <a class="cart-cta" href="#products">選購金獎豆</a>
     </div>
   </header>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content reveal">
-        <p class="breadcrumb">關於南投阿拉比卡 / 小農故事</p>
-        <h1 id="hero-title">我們的咖啡小農｜山霧裡的阿拉比卡職人</h1>
-        <p class="hero-lead">參考小農故事型網站架構，以文章導讀、側欄資訊、商品推薦與相關文章串起完整品牌電商體驗；圖片保留原本山林、咖啡與職人素材。</p>
+        <span class="medal-badge">2026 Ren'ai Coffee Awards Winner</span>
+        <h1 id="hero-title"><span class="gold-text">麒麟啡香</span><br />原民職人的黑金賽事級精品豆</h1>
+        <p class="hero-lead">以深石墨黑承載高山雲霧，以香檳金刻畫榮耀。主理人辜志雄 Bunun 將仁愛鄉 1000m+ 微氣候、原民山林智慧與賽事級後製，凝縮成每一杯尊貴且溫暖的香氣。</p>
         <div class="hero-actions">
-          <a class="button primary" href="#story">閱讀故事</a>
-          <a class="button ghost" href="#shop">選購精品豆</a>
+          <a class="button primary" href="#products">搶購金獎批次</a>
+          <a class="button ghost" href="#heritage">查看得獎履歷</a>
+        </div>
+      </div>
+      <div class="hero-logo reveal" aria-label="麒麟啡香金色麒麟標誌">
+        <svg class="kirin-emblem" viewBox="0 0 420 420" role="img" aria-labelledby="kirin-title">
+          <title id="kirin-title">金色麒麟與咖啡杯標誌</title>
+          <defs>
+            <linearGradient id="goldGradient" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#fff8cf" />
+              <stop offset="0.36" stop-color="#d4af37" />
+              <stop offset="0.72" stop-color="#8b5f22" />
+              <stop offset="1" stop-color="#f8e7a2" />
+            </linearGradient>
+          </defs>
+          <path d="M207 63c47 24 64 67 48 122 43-19 79-8 108 32-58-6-98 10-122 49 13 27 41 42 82 45-38 31-83 34-134 8-45 5-78-11-99-48-25 2-45-8-61-30 34 3 63-7 87-29-16-58 14-117 91-149Z" fill="url(#goldGradient)" opacity="0.92" />
+          <path d="M147 214c35 22 80 22 129 0-12 51-35 77-70 78-34 1-54-25-59-78Z" fill="#050505" stroke="url(#goldGradient)" stroke-width="7" />
+          <path d="M282 147c-8-32 5-62 38-91 1 42-7 75-38 91Zm-49-29c-5-35 8-68 39-99 4 44-5 79-39 99Z" fill="url(#goldGradient)" />
+          <path d="M255 170c25-5 48 3 68 24-31 2-54-6-68-24Zm-120 32c-37 17-72 14-105-8 43-12 78-9 105 8Z" fill="url(#goldGradient)" opacity="0.86" />
+          <circle cx="225" cy="156" r="6" fill="#090909" />
+          <path d="M180 247h-70c5 45 22 68 51 68h30c29 0 47-23 54-68h-65Z" fill="none" stroke="url(#goldGradient)" stroke-width="10" stroke-linecap="round" />
+          <path d="M249 260c31-3 43 10 35 32-7 18-24 28-50 28" fill="none" stroke="url(#goldGradient)" stroke-width="10" stroke-linecap="round" />
+        </svg>
+        <div class="emblem-title"><strong>麒麟啡香</strong><span>Kirin Coffee · Bunun</span></div>
+      </div>
+    </section>
+
+    <section id="heritage" class="section" aria-labelledby="heritage-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Winning Heritage</p>
+        <h2 id="heritage-title">榮譽榜：把評鑑獎牌轉化為購買信任</h2>
+        <p>以動態黑金獎牌卡呈現 image_b0a460 的榮耀內容，讓訪客在選購前先看見麒麟啡香的賽事級實力。</p>
+      </div>
+      <div class="honor-board">
+        <article class="honor-card featured reveal">
+          <span class="honor-year">2026 仁愛鄉咖啡生豆評鑑</span>
+          <h3>水洗組</h3>
+          <strong>金質獎</strong>
+          <p>清澈酸質、白花、蜂蜜與高山冷杉氣息，是金獎批次限量區的核心選豆。</p>
+          <span class="trophy-ring">♕</span>
+        </article>
+        <article class="honor-card reveal">
+          <span class="honor-year">2026 仁愛鄉咖啡生豆評鑑</span>
+          <h3>其他處理組</h3>
+          <strong>銀質獎</strong>
+          <p>日曬與特殊發酵批次帶出熱帶果乾、黑糖與酒香尾韻。</p>
+          <span class="trophy-ring">✦</span>
+        </article>
+        <article class="honor-card reveal">
+          <span class="honor-year">1000m+ 高山微氣候</span>
+          <h3>Bunun 職人批次</h3>
+          <strong>限量烘焙</strong>
+          <p>每週小批次烘焙、每批標註處理法與杯測風味，建立精品豆透明履歷。</p>
+          <span class="trophy-ring">☕</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="spirit" class="section" aria-labelledby="spirit-title">
+      <div class="story-grid">
+        <div class="story-portrait reveal" role="img" aria-label="高山雲霧與仁愛鄉咖啡產地意象"></div>
+        <div class="story-copy reveal">
+          <p class="eyebrow">Bunun Spirit</p>
+          <h2 id="spirit-title">辜志雄 Bunun：在山林微氣候裡，磨出頂級賽事感。</h2>
+          <p>麒麟啡香的品牌靈魂來自原民職人對土地的敬意。主理人辜志雄以 Bunun 的專注、節奏與手感照顧咖啡樹，從熟果採收、處理發酵到烘焙曲線，皆以賽事標準檢視。</p>
+          <p>仁愛鄉 1000m+ 的山林日夜溫差，讓咖啡果實緩慢成熟；晨霧保留水分，午後山風帶走濕氣，形塑麒麟啡香尊貴卻溫暖的杯中層次。</p>
+          <div class="profile-stats">
+            <div><strong>1000m+</strong><span>高山微氣候</span></div>
+            <div><strong>Bunun</strong><span>原民職人精神</span></div>
+            <div><strong>2026</strong><span>金質 / 銀質雙獎</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="page-wrap">
-      <article id="story" class="article-card" aria-labelledby="article-title">
-        <figure class="feature-image reveal">
-          <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?auto=format&fit=crop&w=1400&q=88" alt="霧氣包覆的山林與晨光" />
-        </figure>
-        <div class="article-intro reveal">
-          <p class="eyebrow">Nantou Coffee Farmer</p>
-          <h2 id="article-title">辛勤照顧咖啡樹，也照顧南投山林的呼吸。</h2>
-          <p>南投精品阿拉比卡咖啡來自高山與森林交界的產區。清晨雲霧降低日照強度，午後山風帶走濕氣，讓咖啡果實緩慢成熟，累積乾淨甜感與細緻酸質。</p>
-        </div>
-
-        <section id="farming" class="story-block reveal">
-          <div class="story-copy">
-            <p class="eyebrow">與山林共存</p>
-            <h2>友善環境農法，讓土地先有餘裕。</h2>
-            <p>我們以人工巡園、修枝與手選熟果維持咖啡品質，減少不必要的化學介入。這樣的節奏較慢，卻能讓每一杯咖啡保留產地土壤、氣候與林蔭的個性。</p>
-          </div>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=88" alt="暗色背景中的咖啡豆細節" />
-          </figure>
-        </section>
-
-        <section class="story-block reverse reveal">
-          <div class="story-copy">
-            <p class="eyebrow">不斷學習進步</p>
-            <h2>從種植、處理到烘焙，反覆校準風味。</h2>
-            <p>不同批次的水分、密度與熟成狀態都會影響烘焙曲線。烘豆師以小批次紀錄每次變化，讓杉木香、熟果甜與蜂蜜尾韻更穩定地呈現在杯中。</p>
-          </div>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=88" alt="暖光咖啡館裡的手沖咖啡" />
-          </figure>
-        </section>
-
-        <div class="quote-panel reveal">
-          <blockquote>「精品咖啡不是更昂貴的日常，而是更清楚知道自己喝下什麼。」</blockquote>
-        </div>
-
-        <section class="story-block reveal">
-          <div class="story-copy">
-            <p class="eyebrow">台灣小農的價值</p>
-            <h2>讓消費者與產地進入良好的循環。</h2>
-            <p>當每一包咖啡豆都能清楚說出來源、製程與風味，消費者能以更好的選擇支持小農，小農也能以合理收益投入下一季的照護與實驗。</p>
-          </div>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=88" alt="深色桌面上的咖啡杯與光影" />
-          </figure>
-        </section>
-      </article>
-
-      <aside class="sidebar" aria-label="側欄資訊">
-        <section class="sidebar-card reveal">
-          <span class="brand-badge">森</span>
-          <h2>南投精品阿拉比卡</h2>
-          <p>來自台灣高山的醇淨精品，將山林雲霧、職人手感與小農批次放進每日沖煮。</p>
-        </section>
-        <section class="sidebar-card reveal">
-          <h3>搜尋關鍵字</h3>
-          <form class="search-box">
-            <label class="sr-only" for="search">搜尋</label>
-            <input id="search" type="search" placeholder="搜尋咖啡、風味" />
-            <button type="submit">搜尋</button>
-          </form>
-        </section>
-        <section class="sidebar-card reveal">
-          <h3>分類</h3>
-          <ul class="link-list">
-            <li><a href="#shop">濾掛/掛耳式咖啡</a></li>
-            <li><a href="#shop">咖啡熟豆</a></li>
-            <li><a href="#story">關於南投阿拉比卡</a></li>
-            <li><a href="#journal">啡懂札記</a></li>
-          </ul>
-        </section>
-        <section class="sidebar-card reveal">
-          <h3>近期文章</h3>
-          <ul class="link-list">
-            <li><a href="#journal">日曬豆和水洗豆有什麼不同？</a></li>
-            <li><a href="#journal">如何沖出南投阿拉比卡的杉木香</a></li>
-            <li><a href="#journal">精品咖啡中的海拔與甜感</a></li>
-          </ul>
-        </section>
-        <section class="sidebar-card reveal">
-          <h3>標籤</h3>
-          <div class="tag-list">
-            <a href="#story">友善環境農法</a>
-            <a href="#shop">咖啡豆</a>
-            <a href="#story">南投高山</a>
-            <a href="#shop">阿拉比卡</a>
-            <a href="#journal">手沖咖啡</a>
-          </div>
-        </section>
-      </aside>
-    </div>
-
-    <section id="shop" class="shop-section" aria-labelledby="shop-title">
+    <section id="products" class="section shop" aria-labelledby="products-title">
       <div class="section-heading reveal">
-        <p class="eyebrow">Featured Products</p>
-        <h2 id="shop-title">所有商品</h2>
-        <p>延續參考網站的商城入口，將故事閱讀自然導向精品豆選購。</p>
+        <p class="eyebrow">Product Grid</p>
+        <h2 id="products-title">金獎批次限量區</h2>
+        <p>以風味雷達圖協助快速決策，讓高轉換商品卡同時呈現價格、獎項與杯測輪廓。</p>
       </div>
       <div class="product-grid">
-        <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=900&q=88" alt="深焙咖啡豆與職人選豆氛圍" />
+        <article class="product-card limited reveal">
+          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=900&q=88" alt="深焙咖啡豆與金獎批次精品咖啡" />
           <div class="product-body">
-            <p class="roast">淺中焙 · 水洗</p>
-            <h3>杉林溪晨霧</h3>
-            <p>柑橘、白花、蜂蜜尾韻。</p>
-            <div class="product-meta"><strong>NT$ 620</strong><button type="button">加入購物車</button></div>
+            <p class="roast">金質獎 · 水洗 · 200g</p>
+            <h3>金麟水洗批次</h3>
+            <p>白花、柑橘、蜂蜜、冷杉，口感乾淨且尾韻細長。</p>
+            <svg class="radar" viewBox="0 0 120 120" aria-label="金麟水洗批次風味雷達圖">
+              <polygon class="grid" points="60,10 108,45 90,102 30,102 12,45" />
+              <polygon class="grid" points="60,28 91,51 79,88 41,88 29,51" />
+              <polygon class="flavor" points="60,15 98,48 78,86 34,96 24,44" />
+              <text x="54" y="8">花香</text><text x="96" y="43">甜感</text><text x="78" y="116">厚度</text><text x="18" y="116">尾韻</text><text x="0" y="43">酸質</text>
+            </svg>
+            <div class="product-meta"><strong>NT$ 1,280</strong><button type="button">加入購物車</button></div>
+          </div>
+        </article>
+        <article class="product-card limited reveal">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=88" alt="深色光影裡的精品咖啡杯" />
+          <div class="product-body">
+            <p class="roast">銀質獎 · 特殊處理 · 200g</p>
+            <h3>黑金日曬批次</h3>
+            <p>熟莓、黑糖、可可與酒香尾韻，適合喜歡濃郁層次的藏家。</p>
+            <svg class="radar" viewBox="0 0 120 120" aria-label="黑金日曬批次風味雷達圖">
+              <polygon class="grid" points="60,10 108,45 90,102 30,102 12,45" />
+              <polygon class="grid" points="60,28 91,51 79,88 41,88 29,51" />
+              <polygon class="flavor" points="60,26 106,44 88,98 36,92 22,52" />
+              <text x="54" y="8">果香</text><text x="96" y="43">甜感</text><text x="78" y="116">厚度</text><text x="18" y="116">酒香</text><text x="0" y="43">酸質</text>
+            </svg>
+            <div class="product-meta"><strong>NT$ 1,080</strong><button type="button">加入購物車</button></div>
           </div>
         </article>
         <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=88" alt="暖光咖啡館裡的手沖咖啡" />
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=88" alt="暖光咖啡吧檯與手沖精品咖啡" />
           <div class="product-body">
-            <p class="roast">中焙 · 蜜處理</p>
-            <h3>魚池森林蜜香</h3>
-            <p>龍眼蜜、烤堅果、可可。</p>
-            <div class="product-meta"><strong>NT$ 580</strong><button type="button">加入購物車</button></div>
+            <p class="roast">職人配方 · 中焙 · 10入</p>
+            <h3>Bunun 手沖濾掛</h3>
+            <p>把賽事級風味轉成日常儀式，適合辦公室與旅行品飲。</p>
+            <svg class="radar" viewBox="0 0 120 120" aria-label="Bunun 手沖濾掛風味雷達圖">
+              <polygon class="grid" points="60,10 108,45 90,102 30,102 12,45" />
+              <polygon class="grid" points="60,28 91,51 79,88 41,88 29,51" />
+              <polygon class="flavor" points="60,24 88,54 84,92 38,86 20,50" />
+              <text x="54" y="8">香氣</text><text x="96" y="43">甜感</text><text x="78" y="116">厚度</text><text x="18" y="116">平衡</text><text x="0" y="43">酸質</text>
+            </svg>
+            <div class="product-meta"><strong>NT$ 520</strong><button type="button">加入購物車</button></div>
           </div>
         </article>
-        <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=88" alt="深色桌面上的咖啡杯與光影" />
-          <div class="product-body">
-            <p class="roast">中深焙 · 日曬</p>
-            <h3>霧社暖陽</h3>
-            <p>黑糖、熟莓、杉木香氣。</p>
-            <div class="product-meta"><strong>NT$ 680</strong><button type="button">加入購物車</button></div>
-          </div>
-        </article>
-      </div>
-
-      <div class="newsletter-band reveal">
-        <p class="eyebrow">Newsletter</p>
-        <h2>訂閱山林札記，收到最新烘焙批次。</h2>
-        <form class="newsletter">
-          <label class="sr-only" for="email">電子信箱</label>
-          <input id="email" type="email" placeholder="your@email.com" required />
-          <button type="submit">訂閱</button>
-        </form>
       </div>
     </section>
 
-    <section id="journal" class="related-section" aria-labelledby="related-title">
+    <section id="experience" class="section" aria-labelledby="experience-title">
       <div class="section-heading reveal">
-        <p class="eyebrow">Related Posts</p>
-        <h2 id="related-title">相關文章</h2>
+        <p class="eyebrow">Immersive Conversion</p>
+        <h2 id="experience-title">從榮耀、故事到諮詢，縮短購買決策</h2>
       </div>
-      <div class="related-grid">
-        <article class="related-card reveal">
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=90" alt="夜色山脈與星光雲霧" />
-          <div class="related-body">
-            <h3>南投山林如何影響咖啡風味</h3>
-            <p>從雲霧、日照到晝夜溫差，認識產地條件。</p>
-          </div>
-        </article>
-        <article class="related-card reveal">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=90" alt="暖光咖啡吧檯與沖煮場景" />
-          <div class="related-body">
-            <h3>水洗、蜜處理與日曬的差異</h3>
-            <p>用處理法找到自己喜歡的酸甜與厚度。</p>
-          </div>
-        </article>
-        <article class="related-card reveal">
-          <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?auto=format&fit=crop&w=1400&q=88" alt="霧中山林與咖啡產地意象" />
-          <div class="related-body">
-            <h3>小農批次為什麼值得等待</h3>
-            <p>小批量採收、處理與烘焙帶來更清楚的風土表情。</p>
-          </div>
-        </article>
+      <div class="experience">
+        <article class="experience-card reveal"><span>01</span><h3>獎項背書</h3><p>首屏即標示 2026 金質 / 銀質獎，建立精品信任。</p></article>
+        <article class="experience-card reveal"><span>02</span><h3>原民職人</h3><p>Bunun 精神讓品牌有溫度，不只是昂貴，而是有靈魂。</p></article>
+        <article class="experience-card reveal"><span>03</span><h3>風味雷達</h3><p>用視覺化酸質、甜感、厚度與尾韻，降低選豆門檻。</p></article>
+        <article class="experience-card reveal"><span>04</span><h3>LINE 諮詢</h3><p>右下角固定入口，串接職人 1 對 1 品測建議。</p></article>
       </div>
     </section>
   </main>
 
+  <a id="line" class="line-connect" href="https://line.me/" aria-label="透過 LINE 串接職人 1 對 1 品測諮詢">職人 1 對 1 品測諮詢</a>
+
   <footer class="site-footer">
-    <div class="footer-inner">
-      <section>
-        <h2>南投精品阿拉比卡</h2>
-        <p>以南投山林為起點，將台灣高山咖啡的醇淨與職人精神送到你的日常。</p>
-      </section>
-      <section>
-        <h3>網站導覽</h3>
-        <p><a href="#top">首頁</a></p>
-        <p><a href="#shop">所有商品</a></p>
-        <p><a href="#journal">所有文章</a></p>
-      </section>
-      <section>
-        <h3>網站使用說明</h3>
-        <p><a href="#shop">退換貨流程</a></p>
-        <p><a href="#shop">常見問題</a></p>
-        <p><a href="#shop">隱私權條款</a></p>
-      </section>
-      <section>
-        <h3>客服信箱</h3>
-        <p>hello@nantouarabica.example</p>
-        <p>Facebook · Instagram · Line</p>
-      </section>
-    </div>
-    <div class="footer-bottom">© 2026 Nantou Arabica Coffee — All Rights Reserved</div>
+    <section>
+      <h2>麒麟啡香 Kirin Coffee</h2>
+      <p>黑金視覺、原民職人、仁愛鄉高山微氣候與賽事級精品豆。</p>
+    </section>
+    <section><h3>得獎批次</h3><p><a href="#products">金麟水洗批次</a></p><p><a href="#products">黑金日曬批次</a></p></section>
+    <section><h3>品牌故事</h3><p><a href="#spirit">辜志雄 Bunun</a></p><p><a href="#heritage">2026 榮譽榜</a></p></section>
+    <section><h3>聯絡我們</h3><p>0981-667288</p><p><a href="#line">LINE 品測諮詢</a></p></section>
   </footer>
 
   <script>
@@ -590,7 +648,7 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14 });
+    }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
   </script>
